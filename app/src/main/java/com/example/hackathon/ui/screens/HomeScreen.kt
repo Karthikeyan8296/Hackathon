@@ -26,6 +26,7 @@ import androidx.compose.ui.unit.sp
 import com.example.hackathon.R
 import com.example.hackathon.ui.components.BottomNavigationBar
 import com.example.hackathon.ui.components.CardComponent
+import com.example.hackathon.ui.components.DonationComponent
 import com.example.hackathon.ui.components.StatusComponent
 import com.example.hackathon.ui.components.TopSectionComponent
 import com.example.hackathon.ui.theme.Status
@@ -85,6 +86,8 @@ fun HomeScreen(modifier: Modifier = Modifier) {
                     )
                 )
             }
+            Spacer(modifier = Modifier.height(12.dp))
+            DonationComponent()
         }
     }
 }
