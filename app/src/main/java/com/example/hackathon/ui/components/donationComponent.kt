@@ -29,7 +29,7 @@ fun DonationComponent(modifier: Modifier = Modifier) {
     Column(
         modifier = modifier
             .fillMaxWidth()
-            .padding(horizontal = 24.dp)
+            .padding(horizontal = 12.dp)
             .background(color = Status)
             .height(101.dp),
         verticalArrangement = Arrangement.Center
