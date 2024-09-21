@@ -1,5 +1,6 @@
 package com.example.hackathon.ui.components
 
+import android.graphics.drawable.Icon
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
@@ -25,11 +26,11 @@ import com.example.hackathon.R
 import com.example.hackathon.ui.theme.Status
 
 @Composable
-fun CardComponent(modifier: Modifier = Modifier) {
+fun CardComponent(icon: Int, title: String, description: String) {
     Row(
         modifier = Modifier
             .width(200.dp)
-            .padding(horizontal = 12.dp)
+            .padding(horizontal = 6.dp)
             .wrapContentHeight()
             .background(shape = RoundedCornerShape(8.dp), color = Status)
     ) {
@@ -41,7 +42,7 @@ fun CardComponent(modifier: Modifier = Modifier) {
             verticalAlignment = Alignment.CenterVertically
         ) {
             Image(
-                painter = painterResource(id = R.drawable.spark),
+                painter = painterResource(icon),
                 contentDescription = null,
                 modifier = Modifier.size(48.dp)
             )
@@ -49,10 +50,10 @@ fun CardComponent(modifier: Modifier = Modifier) {
             Spacer(modifier = Modifier.width(12.dp))
             Column {
                 Text(
-                    text = "1002",
+                    text = title,
                     style = TextStyle(fontSize = 24.sp, fontWeight = FontWeight.SemiBold)
                 )
-                Text(text = "Spark Points", style = TextStyle(fontWeight = FontWeight.Bold))
+                Text(text = description, style = TextStyle(fontWeight = FontWeight.Bold))
             }
         }
     }
@@ -61,5 +62,5 @@ fun CardComponent(modifier: Modifier = Modifier) {
 @Preview
 @Composable
 private fun CardComponentsPreview() {
-    CardComponent()
+    CardComponent(icon = R.drawable.spark, description = "Spark points", title = "23")
 }
